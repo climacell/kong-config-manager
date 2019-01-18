@@ -34,7 +34,15 @@ if (program.host) {
         }`
       );
     }
-    retPromise = dump(configs[program.instance], program.instance);
+
+    const config = configs[program.instance];
+
+    // isolate to specific object_type
+    if (program.object_type) {
+      config.object_type = program.object_type;
+    }
+
+    retPromise = dump(config, program.instance);
   }
 }
 

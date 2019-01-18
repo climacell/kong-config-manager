@@ -32,7 +32,7 @@ function initApply(instance, config) {
   const host = _.trimEnd(config.host, '/');
   if (fs.existsSync(instancePath)) {
     logger.info(`Ready to apply configs for ${instance}...`);
-    return apply(instancePath, host).then(() => {
+    return apply(instancePath, host, config).then(() => {
       logger.info(`Success to apply configs for ${instance}!`);
       return dump(config, instance);
     });
@@ -75,7 +75,15 @@ if (program.host) {
         }`
       );
     }
-    retPromise = initApply(program.instance, configs[program.instance]);
+
+    const config = configs[program.instance];
+
+    // isolate to specific object_type
+    if (program.object_type) {
+      config.object_type = program.object_type;
+    }
+
+    retPromise = initApply(program.instance, config);
   }
 }
 

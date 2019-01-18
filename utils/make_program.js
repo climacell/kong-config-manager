@@ -20,6 +20,10 @@ module.exports = function makeProgram(hasY) {
       'main'
     )
     .option(
+      '--object_type [name]',
+      'which object type of process instead of the full set'
+    )
+    .option(
       '-a, --all',
       'whether to operate on all kong instances listed in CLI config file. NOTE: this requires `--file` option rather than `--host`'
     )

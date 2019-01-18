@@ -59,7 +59,10 @@ module.exports = {
     upstreams: 'id',
     targets: 'id',
     services: 'id',
-    routes: 'id'
+    routes: 'id',
+    jwts: 'id',
+    acls: 'id',
+    key_auths: 'id'
   },
   REQUEST_TIMEOUT: 1500
 };
