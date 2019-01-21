@@ -46,7 +46,9 @@ module.exports = {
       'plugins',
       'certificates',
       'snis',
-      'upstreams'
+      'upstreams',
+      'jwts',
+      'key-auths'
     ]
   },
   IDENTIFIRES: {
