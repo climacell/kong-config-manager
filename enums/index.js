@@ -48,7 +48,8 @@ module.exports = {
       'snis',
       'upstreams',
       'jwts',
-      'key-auths'
+      'key-auths',
+      'acls'
     ]
   },
   IDENTIFIRES: {
